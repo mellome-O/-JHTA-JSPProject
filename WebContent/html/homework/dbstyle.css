@@ -1,0 +1,51 @@
+@import url("./dbreset.css");
+
+.content-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height:Inherit;
+    min-height:Inherit;
+    --opacity:0.5;
+    display: flex;
+    background: white;
+}
+
+.hidden {display: none; }
+
+/*-------------------------------------------------------*/ 
+#header{
+height: 70px;
+background: white;
+display: flex;
+}
+#main-menu>.upup{
+    background: blue;
+    display: flex;
+}
+/*-------------------------------------------------------*/ 
+#visual{
+background: black;
+}
+/*-------------------------------------------------------*/ 
+#body{
+background: rgb(221, 220, 220);
+}
+/*-------------------------------------------------------*/ 
+#footer{
+    position: relative;
+    background: gray;
+}
+
+
+/*-------------가구(콘텐츠 스타일+콘텐츠 블록)-------------*/
+#logo{
+
+}
+
+
+#counter{
+    position: absolute;
+    right: 0; 
+    bottom:0;
+}

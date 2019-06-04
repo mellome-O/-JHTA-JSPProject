@@ -1,0 +1,17 @@
+body ,h1, ul,li,ol{
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol{
+    list-style-type: none;
+}
+
+li{
+    --display: list-item; listitem이 아닌 다른 것으로 변경하거나
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
