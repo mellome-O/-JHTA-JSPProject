@@ -71,8 +71,7 @@ public class OracleNoticeDao implements NoticeDao {
 				);
 			list.add(notice);
 		}
-		
-		
+	
 		rs.close();
 		st.close();
 		con.close();

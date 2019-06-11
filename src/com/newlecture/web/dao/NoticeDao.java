@@ -7,7 +7,8 @@ import com.newlecture.web.dao.oracle.NoticeView;
 import com.newlecture.web.entity.Notice;
 
 public interface NoticeDao {
-
+	int getCount() throws ClassNotFoundException, SQLException;
+	int getCount(String field, String query) throws ClassNotFoundException, SQLException;
 	
 	List<NoticeView> getList() throws ClassNotFoundException, SQLException;
 	List<NoticeView> getList(int page) throws ClassNotFoundException, SQLException;

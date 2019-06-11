@@ -83,24 +83,42 @@
 									<td class="hit">조회수</td>
 								</tr>
 							</thead>
-
-
 							<tbody>
-								<c:forEach var="n" items="${list}">
-							
+							<style>
+								.even {
+									background : beige;
+								}
+							</style>
+							<!-- begin="1" end="5" -->
+						<!-- varStatus의 속성들 -->
+							<c:forEach var="n" items="${list}" begin="0" end="9" varStatus="s"> 
+										<c:if test ="${s.index %2==0}">
+										<tr class="even">
+										<td class="num">${n.id}</td>
+											<td class="title"><a href="detail?id=${n.id}">
+													${s.index}/${s.current.title} :  ${n.title} </a> <span>[23]</span>
+											</td>
+											<td class="writer">${n.writerId}</td>
+											<td class="date">${n.regDate}</td>
+											<td class="hit">${n.hit}</td>
+											</tr>
+										</c:if>
+										<c:if test ="${s.index %2==1}">
 										<tr>
 											<td class="num">${n.id}</td>
 											<td class="title"><a href="detail?id=${n.id}">
-													${n.title} </a> <span>[23]</span>
+													${s.index}/${s.current.title} :  ${n.title} </a> <span>[23]</span>
 											</td>
 											<td class="writer">${n.writerId}</td>
 											<td class="date">${n.regDate}</td>
 											<td class="hit">${n.hit}</td>
 										</tr>
-					
+										</c:if>
 								</c:forEach>
 						
-
+								<tr>
+									<td colspan = "5">-----------------------------------------</td>
+								</tr>
 
 								<!--     <tr>
                                     <td class="num">2</td>
@@ -133,19 +151,27 @@
 						<span class="color-highlight font-bold">1</span> / 1 pages
 					</div>
 				</section>
-
+				
+				<!-- (진리값 혹은 진리값오게하는계산식) ? 참일경우 : 거짓일경우 -->
+				<c:set var="page" value="${ (empty param.p) ? 1 : param.p}"/>
+				<c:set var="start" value="${page-(page-1)%5}"/>
+				<c:set var="end" value=""/>
+				
 				<section id="pager">
 					<h1 class="d-none">페이지</h1>
 					<div>
 						<div>이전</div>
-
+						
+						
+						
 						<ul>
-							<li class="current"><a href="list?p=1">1</a></li>
-							<li><a href="list?p=2">2</a></li>
-							<li><a href="list?p=3">3</a></li>
-							<li><a href="list?p=4">4</a></li>
-							<li><a href="list?p=5">5</a></li>
+							<c:forEach var="n" begin="${start}" end="${start+4}" varStatus="s">
+							<%-- items="${list}" 
+							<li class="current"><a href="list?p=${s.count}">${s.count}</a></li> --%>
+							<li class="current"><a href="list?p=${n}">${n}</a></li>
+							</c:forEach>
 						</ul>
+						
 						<div>다음</div>
 					</div>
 				</section>
