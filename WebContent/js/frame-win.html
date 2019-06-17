@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.addEventListener("load",function(){
+        var ex3Button = document.getElementById("btn-ex3");
+
+        var pex3Button;
+
+        // ex3Button.onload = function(){
+        //     pex3Button = parent.document.getElementById("btn-ex3");
+        //     pex3Button.value = "안녕하세요";
+        // };
+        ex3Button.onclick = function(){
+             pex3Button = parent.document.getElementById("btn-ex3");
+             pex3Button.value = "안녕하세요";
+        }
+    });
+        </script>
+    <!-- <script src="ex1-javascript.js"></script> -->
+</head>
+<body>
+    <input id="btn-ex3" type="button" value="클릭">
+   
+</body>
+</html>

@@ -98,5 +98,8 @@ public class Notice {
 		// TODO Auto-generated method stub
 		return content;
 	}
+
+	
+	
 }
 

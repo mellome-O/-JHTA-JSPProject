@@ -24,7 +24,7 @@
 	width: 375px;
 }
 </style>
-
+<script src="../../js/notice/list.js"></script>
 </head>
 
 <body>
@@ -84,12 +84,6 @@
 								</tr>
 							</thead>
 							<tbody>
-							<style>
-								.even {
-									background : beige;
-								}
-							</style>
-							<!-- begin="1" end="5" -->
 						<!-- varStatus의 속성들 -->
 							<c:forEach var="n" items="${list}" begin="0" end="9" varStatus="s"> 
 										<c:if test ="${s.index %2==0}">
@@ -152,6 +146,11 @@
 					</div>
 				</section>
 				
+				
+				<div id="text-pager">
+					<input type="text">
+					<input type="button" value="요청">
+				</div>
 				<!-- (진리값 혹은 진리값오게하는계산식) ? 참일경우 : 거짓일경우 -->
 				<c:set var="page" value="${ (empty param.p) ? 1 : param.p}"/>
 				<c:set var="start" value="${page-(page-1)%5}"/>

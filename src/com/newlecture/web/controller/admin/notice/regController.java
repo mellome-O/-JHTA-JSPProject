@@ -25,11 +25,12 @@ import com.newlecture.web.entity.Notice;
 import com.newlecture.web.entity.NoticeFile;
 
 @WebServlet("/admin/notice/reg")
+
 @MultipartConfig(
 		location="C:\\downloads",
-	    fileSizeThreshold = 1024*1024,
-	    maxFileSize = 1024*1024*5, //5메가
-	    maxRequestSize = 1024*1024*5*5 // 5메가 5개까지
+	    fileSizeThreshold = 1024 * 1024,
+	    maxFileSize = 1024 * 1024 * 5,
+	    maxRequestSize = 1024 * 1024 * 5 * 5
 	)
 public class regController extends HttpServlet {
 
@@ -48,7 +49,7 @@ public class regController extends HttpServlet {
 	  String urlPath = "/upload";
 	  String path = request.getServletContext().getRealPath(urlPath);
 	  
-	  System.out.println(path);
+	  //System.out.println(path);
 	  
 	 //2. 업로드된 파일명 얻기
 	  //JDK 버전에 따라 업로드 한 파일명 얻기위한 방법 코드가 다름
@@ -146,8 +147,10 @@ public class regController extends HttpServlet {
 	   }
 	
 	
-	     if(result != 1) response.sendRedirect("error"); else
-	     response.sendRedirect("list");
+	     if(result != 1)
+	    	 response.sendRedirect("error"); 
+	     else
+	    	 response.sendRedirect("list");
 	   
 	}
 	
@@ -293,7 +296,7 @@ public class regController extends HttpServlet {
 //   }
    @Override
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      request.getRequestDispatcher("/WEB-INF/view/notice/reg.jsp").forward(request, response);
+      request.getRequestDispatcher("/WEB-INF/view/admin/notice/reg.jsp").forward(request, response);
    }
    
 }
