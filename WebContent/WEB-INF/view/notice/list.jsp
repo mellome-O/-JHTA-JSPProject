@@ -24,6 +24,8 @@
 	width: 375px;
 }
 </style>
+
+
 <script src="../../js/notice/list.js"></script>
 </head>
 
@@ -73,6 +75,19 @@
 
 					<!-- form 기본은 get으로 되어있음
 					post로 변경 -->
+<template class = "notice-template" >
+	<tr>
+	<td class="num"></td>
+	<td class="title"><a href="detail?id="></a>
+			
+	<span></span>
+	<span><a href="list?eid=">수정</a><a href="">삭제</a></span>
+	</td>
+	<td class="writer"></td>
+	<td class="date"></td>
+	<td class="hit"></td>
+	</tr>
+</template>
 						<table>
 							<thead>
 								<tr>
@@ -85,6 +100,7 @@
 							</thead>
 							<tbody>
 						<!-- varStatus의 속성들 -->
+						
 							<c:forEach var="n" items="${list}" begin="0" end="9" varStatus="s"> 
 										<c:if test ="${s.index %2==0}">
 										<tr class="even">
@@ -146,12 +162,15 @@
 					</div>
 				</section>
 				
+				<div id="text-remove">
+					<label>삭제할 게시글ID</label><input type="text" value="">
+					<input type="button" value="삭제">
 				
 				<div id="text-pager">
 					<input type="text">
 					<input type="button" value="요청">
 				</div>
-				<!-- (진리값 혹은 진리값오게하는계산식) ? 참일경우 : 거짓일경우 -->
+				<!--  (진리값 혹은 진리값오게하는계산식) ? 참일경우 : 거짓일경우 -->
 				<c:set var="page" value="${ (empty param.p) ? 1 : param.p}"/>
 				<c:set var="start" value="${page-(page-1)%5}"/>
 				<c:set var="end" value=""/>
@@ -160,9 +179,7 @@
 					<h1 class="d-none">페이지</h1>
 					<div>
 						<div>이전</div>
-						
-						
-						
+		
 						<ul>
 							<c:forEach var="n" begin="${start}" end="${start+4}" varStatus="s">
 							<%-- items="${list}" 

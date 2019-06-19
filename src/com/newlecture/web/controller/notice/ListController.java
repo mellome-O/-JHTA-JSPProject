@@ -32,23 +32,23 @@ public class ListController extends HttpServlet{
       
       int count = 0;
       
-      Cookie[] cookies = request.getCookies();
-      for(int i=0; i<cookies.length; i++) {
-    	  if(cookies[i].getName().equals("count")) {
-    		  count = Integer.parseInt(cookies[i].getValue());
-    		  
-    		  System.out.println("cookie name : " + cookies[i].getName()
-    				  + ", value : " + cookies[i]. getValue());    		  
-    		  
-    		  count++;
-    		  break;
-    	  }
-      }
-      //session.setAttribute("count",0);
-      Cookie cookie = new Cookie("count",String.valueOf(count));
-      cookie.setMaxAge(1000*60*60*24*30);
-      cookie.setPath("/member/");
-      response.addCookie(cookie);
+//      Cookie[] cookies = request.getCookies();
+//      for(int i=0; i<cookies.length; i++) {
+//    	  if(cookies[i].getName().equals("count")) {
+//    		  count = Integer.parseInt(cookies[i].getValue());
+//    		  
+//    		  System.out.println("cookie name : " + cookies[i].getName()
+//    				  + ", value : " + cookies[i]. getValue());    		  
+//    		  
+//    		  count++;
+//    		  break;
+//    	  }
+//      }
+//      //session.setAttribute("count",0);
+//      Cookie cookie = new Cookie("count",String.valueOf(count));
+//      cookie.setMaxAge(1000*60*60*24*30);
+//      cookie.setPath("/member/");
+//      response.addCookie(cookie);
       
       
       NoticeDao noticeDao  = new OracleNoticeDao();

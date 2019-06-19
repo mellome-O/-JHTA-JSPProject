@@ -284,4 +284,16 @@ public class OracleNoticeDao implements NoticeDao {
 	    return id;
 	}
 
+	@Override
+	public int getCount() throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getCount(String field, String query) throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

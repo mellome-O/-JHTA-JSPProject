@@ -1,6 +1,97 @@
 
 var html = "안녕하세요 멜로미의 홈페이지입니다.";
 //h1.innerText = html;
+//자바스크립트 
+//1.언어
+//2.도구 : DOM, CSSOM 
+//3.이벤트 객체
+//4.애니메이션 (only script, css animation)
+//--클라이언트 화면 어느정도 끝난거 --
+//5.Ajax
+//6.HTML5 API, 프로젝트 예제 경험...
+
+//ex9 애니메이션
+window.addEventListener("load", function(){
+var section = document.querySelector("#ex9");
+var startButton = section.querySelector(".start");
+var stopButton = section.querySelector(".pause");
+var ball = section.querySelector(".ball");
+var cover = section.querySelector(".cover");
+
+
+startButton.onclick = function(){
+    ball.style.transform = "rotate(45deg)";
+    //ball.style.top = "400px";
+    //ball.style.left = "400px";
+
+alert("시밤바 바밤바");
+
+    //ball.style.width = "300px";
+    //ball.style.position = "absolute"; ->자바스크립트에는 동적인 것만 적어주기
+    //position을 static 아이들인 absolute fixed relative 중 하나로
+    //setInterval(function,반복되는단위시간);
+
+    //style에서 초기값 얻는 것 문제가 있다..초기값 계산해내는 것 필요
+    //1번방법 
+    //ball.style.top = "0px";
+    //ball.style.left = "0px";
+    //1번방법 말고 아래처럼 getComputedStyle 사용하자
+   
+    // var ballstyle = getComputedStyle(ball); //볼이 가진 스타일 얻어왔다
+    // ball.style.left = ballstyle.getPropertyValue("left");
+    // ball.style.top = ballstyle.getPropertyValue("top");
+    // let para = document.querySelector('.ball');
+    // let ballStyles = window.getComputedStyle(para);
+    
+    // var tid = setInterval(function(){
+        
+    //     var left = parseInt(ball.style.left);
+    //     var top = parseInt(ball.style.top);
+    //     left += 1;
+    //     top += 1;
+    //     ball.style.left = left + "px";
+    //     ball.style.top = top + "px";
+    //     if(left >= 300)
+    //         clearInterval(tid);
+    // }, 17 );//fps 1000이 1초 요것을 60으로 나눈 것
+
+
+};
+
+
+stopButton.onclick = function(e){
+
+}
+
+});
+
+
+
+
+//ex8 트리거
+window.addEventListener("load", function(){
+var section = document.querySelector("#ex8");
+var fileButton = section.querySelector("input[type=file]");
+var trigerButton = section.querySelector("input[type=button]");
+
+trigerButton.onclick = function(e){
+    alert("aa"); //만들자마자 실험해보기 
+
+    var event = new MouseEvent("click",{
+            
+            view:window,
+            bubbles:true,
+            cancelable:true
+    }
+    );
+    fileButton.dispatchEvent(event);
+    } 
+});
+
+
+
+
+
 
 
 //ex7 공지사항 조작하기 
