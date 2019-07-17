@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/view/admin/notice/list-partial.jsp=UTF-8
 encoding//WebContent/add.jsp=UTF-8
 encoding//WebContent/html/root/css/style.css=UTF-8
 encoding//WebContent/notice/detailSpagetti.jsp=UTF-8

@@ -10,7 +10,208 @@ var html = "안녕하세요 멜로미의 홈페이지입니다.";
 //5.Ajax
 //6.HTML5 API, 프로젝트 예제 경험...
 
-//ex9 애니메이션
+
+
+//ex14
+window.addEventListener("load", function(){
+    var section = document.querySelector("#ex14");
+    var tabmenuList = section.querySelector(".tab-menu-list");
+    var tabs = section.querySelectorAll(".tab-menu-list li");
+    var contentList = section.querySelector(".content-list");
+    //var contents = contentList.children;
+    var contents = section.querySelectorAll(".content-list div");
+
+    tabmenuList.onclick = function(e){
+        if(e.target.tagName != "A")
+            return;
+        
+        e.preventDefault();
+
+    var contentId = e.target.href.split("#");
+    alert("현재 contentId는 " + contentId[1] +"입니다.");
+
+    //항목이 많을 때는 분기문으로 있냐없냐 알아봐서 지우는 게 성능에 좋고
+    //항목이 별로 없을 때는 분기문 쓰지말고 아래처럼 하는 것이 좋다
+    for(var i=0; i<contents.length; i++)
+        contents[i].classList.remove("current");
+
+    
+    var contentDiv = contentList.querySelector("#"+contentId);
+    contentDiv.classList.add("current");
+    }
+});
+
+//hw1
+window.addEventListener("load", function(){
+    var section = this.document.querySelector("#hw1");
+    var prevButton = section.querySelector(".prev-button");
+    var nextButton = section.querySelector(".next-button");
+
+    var imgList = section.querySelector(".img-list");
+    var lis = imgList.children;
+
+nextButton.onclick = function(){
+    var frontLi = imgList.querySelector(".front");
+    var rightLi = imgList.querySelector(".right");
+    var backLi = imgList.querySelector(".back");
+    var leftLi = imgList.querySelector(".left");
+
+    frontLi.classList.remove("front");
+    frontLi.classList.add("right");
+    rightLi.classList.remove("right");
+    rightLi.classList.add("back");
+    backLi.classList.remove("back");
+    backLi.classList.add("left");
+    leftLi.classList.remove("left");
+    leftLi.classList.add("front");
+}
+prevButton.onclick = function(){
+    var frontLi = imgList.querySelector(".front");
+    var rightLi = imgList.querySelector(".right");
+    var backLi = imgList.querySelector(".back");
+    var leftLi = imgList.querySelector(".left");
+
+    frontLi.classList.remove("front");
+    frontLi.classList.add("left");
+    rightLi.classList.remove("right");
+    rightLi.classList.add("front");
+    backLi.classList.remove("back");
+    backLi.classList.add("right");
+    leftLi.classList.remove("left");
+    leftLi.classList.add("back");
+
+
+}
+
+
+
+});
+
+
+
+//ex13
+window.addEventListener("load", function(){
+    var section = document.querySelector("#ex13");
+    var prevButton = section.querySelector(".prev-button");
+    var nextButton = section.querySelector(".next-button");
+
+    var imgList = section.querySelector(".img-list");
+    var lis = imgList.querySelector("li");
+    //var lis = imgList.children;
+
+
+nextButton.onclick = function(){
+    var centerLi = imgList.querySelector(".center");
+    var rightLi = centerLi.nextElementSibling;
+    //imgLists.classList.add("left");  
+    centerLi.classList.remove("center");
+    centerLi.classList.add("left");
+    rightLi.classList.remove("right");
+    rightLi.classList.add("center");
+};
+
+prevButton.onclick = function(){
+    var centerLi = imgList.querySelector(".center");
+    var leftLi = centerLi.previousElementSibling;
+    centerLi.classList.remove("center");
+    centerLi.classList.add("right");
+    leftLi.classList.remove("left");
+    leftLi.classList.add("center");
+};
+
+
+});
+
+
+
+
+
+//ex12 
+window.addEventListener("load", function(){
+    var section = document.querySelector("#ex12");
+    var goButton = section.querySelector(".go-Button");
+    var container = section.querySelector(".container");
+
+    function getRandomInt(max){
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    goButton.onclick = function(e){
+        //var boxes = container.querySelectorAll("div");
+        var boxes = container.children;
+        // var min = 0;
+        // var max = 600;
+        // boxes[0].style.left = Math.random() * (max-min) + min + "px";
+        // boxes[0].style.left = Math.random() * (max-min) + min + "px";
+
+        for(var i=1; i<=5; i++){
+        boxes[i].style.left = getRandomInt(600) + "px";
+        boxes[i].style.top = getRandomInt(400) + "px";
+    }
+    };
+});
+
+
+
+
+//ex11 애니메이션
+window.addEventListener("load", function(){
+    var section = document.querySelector("#ex11");
+    var delButton = section.querySelector(".del-Button");
+    var box = section.querySelector(".box");
+    var container = section.querySelector(".container");
+
+    box.addEventListener("animationend",function(){
+        box.parentElement.remove();
+    })
+
+    delButton.onclick = function(){
+        box.classList.add("ani-slide-open");
+    };
+
+   
+
+});
+
+//ex10 스토리기반 애니메이션
+window.addEventListener("load", function(){
+    var section = document.querySelector("#ex10");
+    var contentButton = section.querySelector(".contentButton");
+    var xButton = section.querySelector("xButton");
+    var screen= section.querySelector(".screen");
+    var dialog= section.querySelector(".dialog");
+    var content= section.querySelector(".content");
+   
+    contentButton.onclick = function(){
+        // 그라데이션 때문에 주석풀기
+        dialog.classList.add("show");
+
+        // dialog.style.display = "block";
+
+        // //꼼수..먼저 실행안되도록 막아주기
+        // setTimeout(function(){
+        //     screen.style.opacity = 0.7;
+        // },10);
+}
+
+//앞에 트랜지션 끝나고 실행시키는 것
+    screen.addEventListener("transitionend", function(){
+        content
+        .style
+        .display="block";
+    })
+
+    screen.onclick = function(){
+        dialog.classList.remove("show");
+    }
+// 결론 : 매니저님이 사람을 잘 못본다
+// 나를 못알봄
+//사잘알 사잘못 
+
+});
+
+
+//ex9 트랜지션 애니메이션
 window.addEventListener("load", function(){
 var section = document.querySelector("#ex9");
 var startButton = section.querySelector(".start");

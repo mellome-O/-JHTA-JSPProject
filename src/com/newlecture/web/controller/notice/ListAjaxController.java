@@ -43,9 +43,9 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
       e.printStackTrace();
    }
    
-   resp.setCharacterEncoding("UTF-8"); //Ãâ·ÂÇÒ ¶§ ÀÎÄÚµù ¹æ½Ä
-   resp.setContentType("text/txt:charset=utf-8");//MIME json content type //Å¬¶óÀÌ¾ðÆ®°¡ ±× ÀÎÄÚµù¹æ½Ä ÀÌÇØÇÏ´Â °Í
-   //setcontenttype °Ë»öÇØ¼­ ·¹ÆÛ·±½º Ã£¾Æ¼­ mime 
+   resp.setCharacterEncoding("UTF-8"); //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½
+   resp.setContentType("text/txt:charset=utf-8");//MIME json content type //Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½
+   //setcontenttype ï¿½Ë»ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½Û·ï¿½ï¿½ï¿½ Ã£ï¿½Æ¼ï¿½ mime 
    
    PrintWriter out = resp.getWriter();
    

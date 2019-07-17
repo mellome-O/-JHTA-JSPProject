@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>Insert title here</title>
     <h1 id="h1" onclick="alert('hello');"></h1>
-    <script src="ex1-javascript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="ex2-jquery.js"></script>
 
 </head>
 
@@ -210,7 +211,7 @@
             border: 1px solid gray;
             position: relative;
         }
-        .box{
+        .box1{
             width: 100px;
             height: 100px;
             background: blue;
@@ -484,6 +485,7 @@
     <section id="ex7">
         <div>
             <input class="btn-load" type="button" value="로드하기">
+            <input type="date">
         </div>
       <table class="notice" border="1">
           <thead>
@@ -510,7 +512,7 @@
     <!-- 노드 조작하기 -->
     <section id="ex6">
         <style>
-            #ex6 .box{
+            .box{
                 width: 100px;
                 height: 100px;
                 border: 1px solid blue;
@@ -538,7 +540,7 @@
             <option value = "https://scontent-sea1-1.cdninstagram.com/vp/087e912daa03978277a44cb02666dcb7/5D877E93/t51.2885-15/e35/13732332_1042847992458655_2045076975_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com&ig_cache_key=MTI5Mzg3NzAwMzQzMDQ2Nzk4Mw%3D%3D.2">img1</option>
             <option value = "https://img.insight.co.kr/static/2016/06/13/2000/s2q33j23pj02068k8j7v.jpg">img2</option>
         </select>
-        <input class = "btn3" type="button" value="변경">
+        <input type="submit" value="변경" id="button">
         <input class = "btn1" type="button" value="적용">
         <!-- 다른지역과상관없게 하기위해 id가 아닌 
         지역 내의 이름인, 상대적으로 적합한 클래스명 사용 -->
@@ -550,7 +552,8 @@
 
     <!-- 노드를 선택할 수 있느냐 -->
     <section id = "ex4">
-        <input type = button value = "클릭">
+        <input type = "button" value = "클릭">
+        <input type = "button" value = "클릭">
         <ul>
             <li>1</li>
             <li>2</li>
@@ -588,15 +591,16 @@
 
     <section id ="ex2">
         <div>
-            남은시간 <span id="count-span">60</span>초
+            남은시간<span id="count-span">60</span>초
             <input id="countdown-button" type="button" value="카운트 시작" />
         </div>
     </section>
 
-    <section id = "ex1">a&lt;b
-    <input type="text" id="x-input">+<input type="text" id="y-input">
-    <input type="button" value="계산하기" id="btn-result">
+    <section id = "ex1">
+        <input type="text" id="x-input">+<input type="text" id="y-input">
+        <input type="button" value="계산하기" id="btn-result">
     </section>
 </body>
-
+ 
+<div class=""></div>
 </html>

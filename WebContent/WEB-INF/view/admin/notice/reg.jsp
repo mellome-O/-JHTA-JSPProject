@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <title>Document</title>
 
-<link href="../css/style.css" type="text/css" rel="stylesheet">
+<link href="/css/style.css" type="text/css" rel="stylesheet">
 
 </head>
 
@@ -89,6 +89,9 @@
 									<th>내용</th>
 									<td><textarea name="content"></textarea></td>
 								</tr>
+				
+				
+				
 							</tbody>
 						</table>
 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <h1 id="h1" onclick="alert('hello');"></h1>
+    <script src="ex1-javascript.js"></script>
+
+</head>
+
+
+<body>
+    <!-- 캐러셀 과제과제 -->
+    <style>
+            #hw1 ul,
+            #hw1 li{
+                padding: 0px;
+                margin: 0px;
+                text-align: center;
+                font-size: 0;
+            }
+            #hw1 li{
+                list-style-type: none;
+            }
+            #hw1 img{
+                vertical-align: middle;
+            }
+    
+            #hw1 .d-none{
+                display: none;
+            }
+            #hw1 .img-list{
+                display: flex;
+    
+                width: 446px; 
+                height: 1000px;
+                /* 첫번째항목 너 너비 높이 몇이야? 
+                동적으로 알아내서 재사용할 수 있다 */
+                border: 1px solid red; 
+                --overflow: hidden;
+    
+                position: relative;
+                /* 부모영역으로 위치잡아주기 박스에 이미지 딱맞추기 */
+            }
+            #hw1 .img-list li{
+                position: absolute; 
+                top:0px; 
+                transition: 600ms;
+                display: flex;
+                
+    
+                /* left값은 변경되니까 계속 움직이니까 자바스크립트로
+                갯수고정되어있다면 가운데,이전,다음 양쪽의 위치를
+                .pos1, .pos2 클래스 미리설정해두고, 
+                갯수가 고정되어있지않다면 자바스크립트로!! 
+                한꺼번에 같이 이동하는 것이 아니라 
+                덮어쓰기방식이라면 들어오는 쪽이 z-index가 높아야하니까
+                .get-in 클래스에서 z-index 를 증가시켜준다  */
+    
+            }
+            #hw1 .img-list li.left{
+                left:0%;
+                top:100px;
+                transform: scale(1,1);
+                z-index: 100;
+
+            }
+            #hw1 .img-list li.front{
+                left:50%;
+                top:300px;
+                transform: scale(2,2);
+                z-index: 999;
+            }
+            #hw1 .img-list li.back{
+                left:50%;
+                top:0px;
+                transform: scale(0.5,0.5);
+                z-index: 10;
+            }
+            #hw1 .img-list li.right{
+                left:150%;
+                top:100px;
+                transform: scale(1,1);
+                z-index: 100;
+            }
+            #hw1 .pagenum{
+                display: flex;
+            }
+            #hw1 .pagenum li{
+               
+                font-size: 10px;
+             
+            }
+        </style>
+
+
+
+
+    <section id="hw1"> <!-- box -->
+        <h1 class="d-none">캐러셀</h1>
+        <ul class="img-list"> <!-- ul이니까 -list -->
+            <li class="front"><img src="https://www.jhta.co.kr/data/banner/1559723179_98b19fef89e671b80884f77a2ff91653.jpg"></li>
+            <li class="right"><img src="https://www.jhta.co.kr/data/banner/1533781286_160060bf05d7ce9127afe4545d59b59e.jpg"></li>
+            <li class="back"><img src="https://www.jhta.co.kr/data/banner/1533781286_160060bf05d7ce9127afe4545d59b59e.jpg"></li>
+            <li class="left"><img src="https://www.jhta.co.kr/data/banner/1559024392_7cdec471473eec512c241ab4726526d0.jpg"></li>
+        </ul>
+        <ul class="pagenum">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="prev-button">이전</div>
+        <div class="next-button">다음</div>
+    </section>
+
+
+</body>
+
+</html>
